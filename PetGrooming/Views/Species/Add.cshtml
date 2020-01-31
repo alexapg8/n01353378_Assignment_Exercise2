@@ -2,6 +2,13 @@
 @{
     ViewBag.Title = "Add";
 }
-
-<h2>Add</h2>
-
+    <div class="content">
+        <h2>Add a New Species</h2>
+        <a href="/Species/List" class="button">Back to List</a>
+        <div class="specific-row">
+            <form method="POST" action="/Species/Add">
+                <span class="name">Name: </span><input id="SpeciesName" type="text" name="SpeciesName" />
+                <input type="submit" value="Add Species" class="button">
+            </form>
+        </div>
+    </div>

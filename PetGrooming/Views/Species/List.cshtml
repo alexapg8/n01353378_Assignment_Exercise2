@@ -4,13 +4,24 @@
 @{
     ViewBag.Title = "List";
 }
-
-<h2>List</h2>
-@{ 
-    foreach (var species in @Model) {
-
-        <div>
-            @species.Name
+    <div class="content">
+        <h2>List of Species</h2>
+        <a href="/Species/Add" class="button">Add New Species</a>
+        <!-- Ideally there would be a search bar to look for a specific species-->
+        <div class="searchbar">
+            <span class="name">Search: </span><input type="text" name="SearchSpecies" />
+            <input type="submit" value="Submit" class="button">
         </div>
-    }
-}
+        @{
+
+            foreach (var species in @Model)
+            {
+
+                <div class="specific-row">
+                    <a href="/Species/Show/@species.SpeciesID">@species.Name</a>
+                    <a href="/Species/Update/@species.SpeciesID">Update</a>
+                    <a href="/Species/Delete/@species.SpeciesID">Delete</a>
+                </div>
+            }
+        }
+    </div>

@@ -3,17 +3,22 @@
 @{
     ViewBag.Title = "List";
 }
-
-<h2>List of Pets</h2>
-
-@{ 
-    foreach(var Pet in Model)
-    {
-        <div>
-            <span><a href="/Pet/Show/@Pet.PetID">@Pet.PetName</a></span>
-            <span>@Pet.Species.Name</span>
-            <span>@Pet.Weight</span>
-            <span><a href="/Pet/Update/@Pet.PetID">Update</a></span>
+    <div class="content">
+        <h2>List of Pets</h2>
+        <a href="/Pet/New" class="button">Add New Pet</a>
+        <!-- Ideally there would be a search bar to look for a specific pet-->
+        <div class="searchbar">
+            <span class="name">Search: </span><input type="text" name="SearchPets" />
+            <input type="submit" value="Submit" class="button">
         </div>
-    }
-}
+        @{
+            foreach (var Pet in Model)
+            {
+                <div class="specific-row">
+                    <a href="/Pet/Show/@Pet.PetID">@Pet.PetName</a>
+                    <a href="/Pet/Update/@Pet.PetID">Update</a>
+                    <a href="/Pet/Delete/@Pet.PetID">Delete</a>
+                </div>
+            }
+        }
+    </div>

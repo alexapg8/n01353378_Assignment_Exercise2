@@ -1,0 +1,12 @@
+﻿@model PetGrooming.Models.Species
+
+@{
+    ViewBag.Title = "Delete";
+}
+    <div class="content">
+        <h2>Are you sure you want to delete <span class="delname">@Model.Name</span>?</h2>
+        <div class="delbuttons">
+            <a href="/Species/DeleteF/@Model.SpeciesID" class="button">Confirm</a>
+            <a href="/Species/List" class="button">Back to List</a>
+        </div>
+    </div>

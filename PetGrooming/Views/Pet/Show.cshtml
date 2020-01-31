@@ -3,9 +3,18 @@
 @{
     ViewBag.Title = "Show";
 }
-
-<h2>Show Pet</h2>
-
-<div>Name : @Model.PetName</div>
-<div>Weight : @Model.Weight</div>
-<div>Species : @Model.Species.Name</div>
+    <div class="content">
+        <h2>Show Pet</h2>
+        <a href="/Pet/List" class="button">Back to List</a>
+        <div class="petform">
+            <div class="name">Name : <span class="p_input">@Model.PetName</span></div>
+            <div class="name">Weight : <span class="p_input">@Model.Weight</span> kg</div>
+            <div class="name">Species : <span class="p_input">@Model.Species.Name</span></div>
+            <div class="name">Color: <span class="p_input">@Model.Color</span></div>
+            <div class="name">Notes: <span class="p_input">@Model.Notes</span></div>
+        </div>
+        <div class="updel">
+            <a href="/Pet/Update/@Model.PetID" class="button">Update</a>
+            <a href="/Pet/Delete/@Model.PetID" class="button">Delete</a>
+        </div>
+    </div>
